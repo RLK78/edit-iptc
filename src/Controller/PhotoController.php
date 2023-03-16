@@ -52,7 +52,7 @@ class PhotoController extends AbstractController
             }
             $path = "../data/images/" . $file;
             $comments = $this->readIPTC($path);
-            $photo = new Photo($path, $comments);
+            $photo = new Photo($path, $file, $comments);
             $photos[] = $photo;
         }        
     

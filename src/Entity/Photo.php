@@ -5,13 +5,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class Photo extends AbstractController
 {
+    private $path;
     private $filename;
     private $comments;
 
-    public function __construct($filename, $comments)
+    public function __construct($path, $filename, $comments)
     {
+        $this->path = $filename;       
         $this->filename = $filename;
         $this->comments = $comments;
+    }
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function setPath($path)
+    {
+        $this->path = $path;
     }
 
     public function getFilename()
