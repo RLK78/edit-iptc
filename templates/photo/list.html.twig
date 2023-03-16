@@ -11,7 +11,7 @@
                 <a href="{{ path('app_edit_photo', {'filename': photo.getFilename()|split('/')|join('-')}) }}">
                     <img src="{{ path('app_image', {'filename': photo.getFilename()}) }}" alt="{{ photo.getFilename() }}" width="200">
                 </a>
-                {{ photo.getIptc()|default('Aucun commentaire') }}
+                {{ photo.getComments()|default('Aucune description') }}
             </li>
         {% endfor %}
     </ul>
