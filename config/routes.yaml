@@ -5,3 +5,12 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+app_home:
+    path: /
+    controller: App\Controller\PhotoController::index
+    
+app_edit_photo:
+    path: /photo/{filename}/edit
+    controller: App\Controller\PhotoController::edit
+
