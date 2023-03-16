@@ -8,4 +8,6 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-/data/images
+# Ignore les fichiers JPG et JPEG
+*.jpg
+*.jpeg
