@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Édition de la photo {{ photo.filename }}</h1>
+    <form method="post">
+        <label for="iptc">Commentaires IPTC :</label><br>
+        <textarea id="iptc" name="iptc" rows="4" cols="50">{{ photo.iptc }}</textarea><br>
+        <input type="submit" value="Enregistrer">
+    </form>
+{% endblock %}

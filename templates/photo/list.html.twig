@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des photos{% endblock %}
+
+{% block body %}
+    <h1>Liste des photos</h1>
+
+    <ul>
+        {% for photo in photos %}
+            <li>
+                <a href="{{ path('app_edit_photo', {'filename': photo.getFilename()|split('/')|join('-')}) }}">
+                    <!--<img src="{{ asset('data/images/' ~ photo.getFilename()) }}" alt="{{ photo.getFilename() }}" width="200">-->
+                    <img src="{{ absolute_url(photo.getFilename()) }}" alt="{{ photo.getFilename() }}" width="200">
+                </a>
+                {{ photo.getIptc()|default('Aucun commentaire') }}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
