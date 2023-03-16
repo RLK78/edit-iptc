@@ -2,18 +2,21 @@
 
 {% block title %}Liste des photos{% endblock %}
 
-{% block body %}
-    <h1>Liste des photos</h1>
 
-    <ul>
-        {% for photo in photos %}
-            <li>
-                <a href="{{ path('app_edit_photo', {'filename': photo.getFilename()|split('/')|join('-')}) }}">
-                    <img src="{{ path('app_image', {'filename': photo.getFilename()}) }}" alt="{{ photo.getFilename() }}" width="200">
-                </a>
-                {{ photo.getComments()|default('Aucune description') }}
-            </li>
-        {% endfor %}
-    </ul>
+{% block body %}
+    <div class="container">
+        <h1>Liste des photos</h1>
+
+        <ul>
+            {% for photo in photos %}
+                <li>
+                    <a href="{{ path('app_edit_photo', {'filename': photo.getFilename()|split('/')|join('-')}) }}">
+                        <img src="{{ path('app_image', {'filename': photo.getFilename()}) }}" alt="{{ photo.getFilename() }}" width="200">
+                    </a>
+                    {{ photo.getComments()|default('Aucune description') }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}
